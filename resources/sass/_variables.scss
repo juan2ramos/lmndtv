@@ -1,19 +1,30 @@
-// Body
-$body-bg: #f8fafc;
+@import "~inuit-css";
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+:root {
+  --primary-color: #ea881c ;
+  --secondary-color: #FAA41B;
+  --darkGreen-color: #778e70;
+  --link-color: white;
+  --fontPrimary--color: #52575A;
+  --lightGrey-color: #94979B;
+  --darkGrey-color: #37542f;
+  --dark-color: #000;
+  --active-color: #3A84FF;
+  --grid-maxWidth: 1024px;
+}
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: 420px) {
+      @content
+    }
+  } @else if $breakpoint == "medium" {
+    @media (min-width: 720px) {
+      @content
+    }
+  } @else if $breakpoint == "large" {
+    @media (min-width: 1280px) {
+      @content
+    }
+  }
+}
