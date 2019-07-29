@@ -2954,6 +2954,10 @@ input[disabled]:hover {
   --grid-maxWidth: 1024px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background: url(/images/pattern.png?75ff56b71f9fcd5157d1d20f77b45540) center, radial-gradient(ellipse at center, #93222a 0%, #610618 61%, #31030c 100%);
@@ -2972,9 +2976,9 @@ input:focus {
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--darkGrey-color);
+  font-weight: 900;
+  font-size: 4rem;
+  color: var(--primary-color);
 }
 
 h2 {
@@ -2984,9 +2988,15 @@ h2 {
 }
 
 h3 {
-  font-weight: 400;
-  font-size: 1.8rem;
-  color: var(--darkGrey-color);
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}
+
+h4 {
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #93222a;
 }
 
 .button {
@@ -3042,25 +3052,6 @@ svg {
   display: flex;
 }
 
-.container {
-  background: white;
-  margin: 1rem auto;
-  padding: 1rem;
-}
-
-@media (min-width: 720px) {
-  .container {
-    margin: 2rem auto;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    margin: 4rem auto;
-    padding: 4rem;
-  }
-}
-
 .table-container {
   max-width: 100%;
 }
@@ -3078,6 +3069,14 @@ tr:nth-child(2n) {
   font-weight: 800;
   color: #570615;
   border-radius: 0.4rem;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 2px #00000091;
+}
+
+.is-text-justify {
+  text-align: justify;
 }
 
 .Home-logoImg {
@@ -3105,5 +3104,139 @@ tr:nth-child(2n) {
 .Home-link {
   color: #3A84FF;
   text-decoration: underline;
+}
+
+.Nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #eaeaea 0%, #eaeaea 47%, #adadad 100%);
+}
+
+.Nav-link {
+  display: block;
+  padding: 0.8rem 2rem;
+  color: #636363;
+  border-left: 1px solid;
+}
+
+.Choose-figure {
+  background: white;
+  border-radius: 0.6rem;
+  box-shadow: 4px 6px 8px -2px #00000091;
+  width: 20rem;
+  height: 20rem;
+  margin: auto;
+}
+
+.Choose-p {
+  font-size: 1.2rem;
+  margin: 1rem auto;
+  max-width: 18rem;
+  text-align: justify;
+}
+
+.content-page {
+  max-width: 62rem;
+  background: white;
+  border-radius: 1rem;
+  margin: auto;
+  text-align: center;
+}
+
+.content-page p {
+  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.content-page b {
+  color: #93222a;
+  font-weight: 900;
+}
+
+.button-page {
+  background: #ea881c;
+  min-height: 2.4rem;
+  padding: 8px 22px !important;
+  margin-left: 2rem;
+  color: #691218;
+  font-weight: 900;
+  border-radius: 10px;
+}
+
+.Contact span {
+  background: #691218;
+  display: block;
+  width: 100%;
+  height: 4.5rem;
+  border-radius: 0.4rem 0 0 0.4rem !important;
+}
+
+.Contact a {
+  color: #000;
+  font-size: 1.4rem;
+}
+
+.Contact p {
+  font-size: 1.4rem;
+}
+
+.Contact input,
+.Contact textarea {
+  border-radius: 0 0.4rem 0.4rem 0 !important;
+}
+
+.Lottery p {
+  max-width: 70rem;
+  margin: auto;
+}
+
+.Lottery iframe {
+  margin: 4rem auto;
+}
+
+.Lottery-board {
+  width: 10%;
+  margin: 0.6rem 0;
+}
+
+.Lottery span {
+  background: white;
+  color: #000;
+  padding: 12px;
+  display: inline-block;
+  line-height: 18px;
+  box-shadow: 4px 6px 8px -2px #00000091;
+  cursor: pointer;
+  min-width: 4.2rem;
+  min-height: 4.2rem;
+}
+
+.Lottery span.selected {
+  background: green;
+  color: white;
+}
+
+.Lottery span.not-available {
+  background: #bdbaba;
+  color: #828282;
+}
+
+.Lottery span.reserved {
+  background: #ea881c;
+  color: #691218;
+}
+
+.Lottery input {
+  padding: 0.8rem 1.6rem !important;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.Lottery-form-p {
+  text-align: justify;
+  font-size: 1.4rem;
 }
 

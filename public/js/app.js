@@ -130,16 +130,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
+  props: ['token '],
   data: function data() {
     return {
+      year: '',
+      month: '',
+      day: '',
+      city: '',
+      check: '',
       years: Object(_Services_dates__WEBPACK_IMPORTED_MODULE_0__["getYears"])(),
       months: Object(_Services_dates__WEBPACK_IMPORTED_MODULE_0__["getMonths"])(),
       days: Object(_Services_dates__WEBPACK_IMPORTED_MODULE_0__["getDays"])()
     };
-  }
+  },
+  computed: {
+    validateDate: function validateDate() {
+      if (this.year === '' || this.month === '' || this.day === '') return true;
+      if (!this.city) return true;
+      if (!this.check) return true;
+      return new Date(this.year + 18, this.month - 1, this.day) > new Date();
+    }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -629,29 +645,45 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "form",
-    { staticClass: "Home-form row justify-center", attrs: { action: "" } },
+    {
+      staticClass: "Home-form row justify-center",
+      attrs: { action: "/solicitar-acceso" }
+    },
     [
-      _c("label", { staticClass: "col-m-5 col-6  m-r-8 " }, [
-        _c(
-          "select",
-          { attrs: { name: "month" } },
-          [
-            _c("option", { attrs: { value: "" } }, [_vm._v("Mes")]),
-            _vm._v(" "),
-            _vm._l(_vm.months, function(month) {
-              return _c("option", { domProps: { value: month } }, [
-                _vm._v(_vm._s(month))
-              ])
-            })
-          ],
-          2
-        )
-      ]),
+      _c("input", {
+        attrs: { type: "hidden", name: "_token" },
+        domProps: { value: _vm.token }
+      }),
       _vm._v(" "),
       _c("label", { staticClass: "col-m-3 m-r-8 col-4" }, [
         _c(
           "select",
-          { attrs: { name: "day" } },
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.day,
+                expression: "day"
+              }
+            ],
+            attrs: { name: "day" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.day = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
           [
             _c("option", { attrs: { value: "" } }, [_vm._v("Día")]),
             _vm._v(" "),
@@ -665,10 +697,77 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
+      _c("label", { staticClass: "col-m-5 col-6  m-r-8 " }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.month,
+                expression: "month"
+              }
+            ],
+            attrs: { name: "month" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.month = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "" } }, [_vm._v("Mes")]),
+            _vm._v(" "),
+            _vm._l(_vm.months, function(month, index) {
+              return _c("option", { domProps: { value: index } }, [
+                _vm._v(_vm._s(month))
+              ])
+            })
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
       _c("label", { staticClass: "col-m-3 col-4" }, [
         _c(
           "select",
-          { attrs: { name: "year" } },
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.year,
+                expression: "year"
+              }
+            ],
+            attrs: { name: "year" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.year = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
           [
             _c("option", { attrs: { value: "" } }, [_vm._v("Año")]),
             _vm._v(" "),
@@ -682,13 +781,90 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("label", { staticClass: "col-10 m-t-12" }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.city,
+                expression: "city"
+              }
+            ],
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.city = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "" } }, [
+              _vm._v("Selecciona la ciudad")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "1" } }, [_vm._v("Bogotá")])
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("p", { staticClass: "col-16 is-text-center m-t-12" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.check,
+              expression: "check"
+            }
+          ],
+          attrs: { type: "checkbox", id: "test3" },
+          domProps: {
+            checked: Array.isArray(_vm.check)
+              ? _vm._i(_vm.check, null) > -1
+              : _vm.check
+          },
+          on: {
+            change: function($event) {
+              var $$a = _vm.check,
+                $$el = $event.target,
+                $$c = $$el.checked ? true : false
+              if (Array.isArray($$a)) {
+                var $$v = null,
+                  $$i = _vm._i($$a, $$v)
+                if ($$el.checked) {
+                  $$i < 0 && (_vm.check = $$a.concat([$$v]))
+                } else {
+                  $$i > -1 &&
+                    (_vm.check = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                }
+              } else {
+                _vm.check = $$c
+              }
+            }
+          }
+        }),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
       _vm._v(" "),
       _c(
         "button",
-        { staticClass: "button-submit m-t-12", attrs: { type: "submit" } },
+        {
+          staticClass: "button-submit m-t-12",
+          attrs: { type: "submit", disabled: _vm.validateDate }
+        },
         [_vm._v("ENTRAR")]
       )
     ]
@@ -699,24 +875,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "col-10 m-t-12" }, [
-      _c("select", { attrs: { name: "city" } }, [
-        _c("option", { attrs: { value: "" } }, [_vm._v("Selecciona la ciudad")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "col-16 is-text-center m-t-12" }, [
-      _c("input", { attrs: { type: "checkbox", id: "test3", checked: "" } }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "test3" } }, [
-        _vm._v("Acepto "),
-        _c("a", { staticClass: "Home-link", attrs: { href: "" } }, [
-          _vm._v("Términos y condiciones")
-        ])
+    return _c("label", { attrs: { for: "test3" } }, [
+      _vm._v("Acepto "),
+      _c("a", { staticClass: "Home-link", attrs: { href: "" } }, [
+        _vm._v("Términos y condiciones")
       ])
     ])
   }
@@ -12845,7 +13007,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function getYears() {
-  var yearInit = new Date().date.getFullYear() - 100;
+  var yearInit = new Date().getFullYear() - 100;
   return Array.from({
     length: 100
   }, function (_, i) {
@@ -12854,8 +13016,12 @@ function getYears() {
 }
 
 function getDays() {
-  var d = new Date("February 30");
-  console.log(d);
+  var days = 1;
+  return Array.from({
+    length: 31
+  }, function (_, i) {
+    return days + i;
+  });
 }
 
 function getMonths() {
@@ -12891,14 +13057,15 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*!******************************************!*\
   !*** ./resources/js/components/Home.vue ***!
   \******************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home_vue_vue_type_template_id_f2b6376c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=f2b6376c&scoped=true& */ "./resources/js/components/Home.vue?vue&type=template&id=f2b6376c&scoped=true&");
 /* harmony import */ var _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.vue?vue&type=script&lang=js& */ "./resources/js/components/Home.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -12928,7 +13095,7 @@ component.options.__file = "resources/js/components/Home.vue"
 /*!*******************************************************************!*\
   !*** ./resources/js/components/Home.vue?vue&type=script&lang=js& ***!
   \*******************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

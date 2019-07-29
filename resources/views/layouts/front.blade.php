@@ -12,10 +12,20 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body data-site="{{env('APP_URL')}}" id="body">
-    <main class="Main" id="app">
-        <div class="Nav" id="Nav"></div>
-        @yield('content')
-    </main>
+<main class="Main" id="app">
+    @if (session()->has('adult'))
+        <div class="Nav  " id="Nav">
+            <ul class="is-list-less row justify-center">
+                <li><a class="Nav-link" href="{{route('choose.night')}}">INICIO</a></li>
+                <li><a class="Nav-link" href="{{route('about')}}">¿QUIÉNES SOMOS?</a></li>
+                <li><a class="Nav-link" href="{{route('rules')}}">REGLAS DE JUEGO</a></li>
+                <li><a class="Nav-link" href="{{route('contact')}}">CONTACTO</a></li>
+            </ul>
+        </div>
+    @endif
+
+    @yield('content')
+</main>
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

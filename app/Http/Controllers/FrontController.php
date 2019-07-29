@@ -11,4 +11,13 @@ class FrontController extends Controller
     {
         return view('front.home');
     }
+
+    public function requestAccess(Request $request)
+    {
+        $request->session()->put('adult', true);
+
+        return redirect()->route('choose.night');
+    }
+
+
 }

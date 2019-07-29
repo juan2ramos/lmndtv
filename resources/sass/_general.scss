@@ -1,3 +1,7 @@
+
+html{
+  overflow-x: hidden ;
+}
 body {
   font-family: 'Lato', sans-serif;
   background: url("../img/pattern.png") center, radial-gradient(ellipse at center, rgba(147, 34, 42, 1) 0%, rgba(97, 6, 24, 1) 61%, rgba(49, 3, 12, 1) 100%);
@@ -16,9 +20,9 @@ textarea:focus, input:focus {
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--darkGrey-color);
+  font-weight: 900;
+  font-size: 4rem;
+  color: var(--primary-color);
 }
 
 
@@ -29,9 +33,14 @@ h2 {
 }
 
 h3 {
-  font-weight: 400;
-  font-size: 1.8rem;
-  color: var(--darkGrey-color);
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}
+h4 {
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #93222a;
 }
 
 .button {
@@ -83,16 +92,8 @@ svg {
 }
 
 .container {
-  background: white;
-  margin: 1rem auto;
-  padding: 1rem;
-  @include respond-to(medium) {
-    margin: 2rem auto;
-  }
-  @include respond-to(large) {
-    margin: 4rem auto;
-    padding: 4rem;
-  }
+
+
 }
 
 .table-container {
@@ -112,4 +113,11 @@ tr:nth-child(2n) {
   font-weight: 800;
   color: #570615;
   border-radius: .4rem;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 2px #00000091;
+}
+.is-text-justify{
+  text-align: justify;
 }
