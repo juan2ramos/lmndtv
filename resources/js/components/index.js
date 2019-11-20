@@ -1,3 +1,4 @@
 import Home from './Home';
+import Numbers from './Numbers';
 
-export default [Home];
+export default [Home, Numbers];
