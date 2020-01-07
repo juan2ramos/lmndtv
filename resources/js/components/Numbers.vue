@@ -1,6 +1,6 @@
 <template>
     <div class="row m-t-40 m-b-40 ">
-        <div class="col-4 p-r-20">
+        <div class="col-16 col-m-4 p-r-20">
             <div class="row middle-items m-b-28  m-t-40">
                 <span class="selected m-r-16"></span>
                 <i>SELECCIONADO</i>
@@ -25,16 +25,16 @@
                 disponibles. </p>
         </div>
 
-        <div class="col-8 row ">
+        <div class="col-16 col-m-8 row ">
 
-            <div class="is-text-center Lottery-board " v-for="number in numbersLocal">
+            <div class="is-text-center Lottery-board " v-for="number in numbersLocal" :key="number">
             <span :class="  number.state ? 'not-available'  : (number.select ? 'selected': '' )" @click="selectItem(number)">
                 {{(number.n < 10) ? '0' + number.n  : number.n}}
             </span>
             </div>
         </div>
 
-        <div class="col-4 p-l-20">
+        <div class="col-16 col-m-4 pad-20">
             <div class="is-text-center m-t-20">
                 <form action="">
                     <h3>DATOS PARTICIPANTE</h3>
@@ -99,6 +99,12 @@
     }
 </script>
 
-<style scoped>
+<style scoped >
+@media (min-width: 720px){
+
+    .pad-20 {
+        padding-left: 20px
+    }
+}
 
 </style>

@@ -8,7 +8,7 @@
             </p>
             <div class="content-page row middle-items">
                 <div class="row p-20 is-full-width">
-                    <form class="col-8 m-t-16 m-b-16" >
+                    <form class="col-16 col-m-8  m-t-16 m-b-16" >
                         <label for="" class="row m-b-12">
                             <span class="col-3"></span>
                             <input class="col-13" type="text" name="name" placeholder="Nombre">
@@ -29,7 +29,7 @@
                             <button class="button button-page">ENVIAR</button>
                         </div>
                     </form>
-                    <div class="col-8 m-t-16 m-b-16">
+                    <div class="col-16 col-m-8 m-t-16 m-b-16">
                         <p class=""><a href="">WhatSapp + 57 222 33 34</a> <br>
                             <a href="">info@lamejornochedetuvida.com</a>
                             <br><br>

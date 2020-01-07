@@ -3,11 +3,11 @@
     <div class=" container row justify-center middle-items is-full-screen Lottery">
         <div class="is-full-width">
             <h1 class="is-text-center m-t-60 m-b-20">{{$categoryFields['Nombre']}}</h1>
-            <p>
+            <>
                 {{$categoryFields['Descripción']}}
             </p>
             <div class="is-text-center m-40">
-                <iframe width="700" height="400" src="{{$categoryFields['URL del video']}}" frameborder="0"
+                <iframe width="700" height="400" class="iframe" src="{{$categoryFields['URL del video']}}" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
             </div>
@@ -28,6 +28,6 @@
             <numbers :numbers="{{$numbers}}" :lotteries="{{$lotteries}}"></numbers>
 
         </div>
-        <
+
     </div>
 @endsection

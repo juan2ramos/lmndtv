@@ -4,11 +4,11 @@
         <div class="is-full-width">
             <h2 class="col-16 is-text-center  m-b-40 text-shadow">MECÁNICA DE PARTICIPACIÓN</h2>
             <div class="content-page row middle-items">
-                <div class="row p-20 middle-items">
-                    <figure class="col-3">
+                <div class="row p-20 middle-items ">
+                    <figure class="col-3 hide-phone">
                         <img src="{{asset('images/women.png')}}" alt="">
                     </figure>
-                    <div class="col-13">
+                    <div class="col-16 col-m-13">
                         <h4>EVITEMOS MALOS ENTENDIDOS POR FAVOR, LEE DETENIDAMENTE.</h4>
                         <p>Las siguientes son las reglas de participación en el sorteo, por favor lee detenidamente todo este archivo antes de participar y así evitar malos entendidos.</p>
                         <h4>ACERCA DEL SORTEO:</h4>

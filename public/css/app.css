@@ -3079,6 +3079,10 @@ tr:nth-child(2n) {
   text-align: justify;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 .Home-logoImg {
   max-width: 50rem;
   width: 90%;
@@ -3106,12 +3110,17 @@ tr:nth-child(2n) {
   text-decoration: underline;
 }
 
+select option {
+  background: white;
+  color: #000;
+}
+
 .Nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to bottom, #eaeaea 0%, #eaeaea 47%, #adadad 100%);
+  background: linear-gradient(to bottom, #eaeaea 0%, #ebebeb 47%, #adadad 100%);
 }
 
 .Nav-link {
@@ -3198,8 +3207,15 @@ tr:nth-child(2n) {
 }
 
 .Lottery-board {
-  width: 10%;
+  width: 14%;
   margin: 0.6rem 0;
+}
+
+@media (min-width: 720px) {
+  .Lottery-board {
+    width: 10%;
+    margin: 0.6rem 0;
+  }
 }
 
 .Lottery span {

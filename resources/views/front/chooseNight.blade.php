@@ -8,7 +8,7 @@
             <ul class="is-list-less row justify-around">
                 @foreach($records as $record)
                     @php($data = $record->getFields())
-                    <li class="col-4">
+                    <li class="col-16 col-m-4">
                         <a href="{{route('lottery', !empty($data['Slug'] )?$data['Slug']: '')}}">
                             <h3 class="is-text-center  text-shadow">{{!empty($data['Nombre'] )?$data['Nombre']: ''}}</h3>
                             <figure class="Choose-figure"></figure>
