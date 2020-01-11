@@ -3153,6 +3153,16 @@ select option {
   transform: translateY(100vh);
 }
 
+.Choose {
+  margin-top: 7rem;
+}
+
+@media (min-width: 720px) {
+  .Choose {
+    margin-top: 0;
+  }
+}
+
 .Choose-figure {
   background: white;
   border-radius: 0.6rem;
@@ -3204,6 +3214,16 @@ select option {
   color: #691218;
   font-weight: 900;
   border-radius: 10px;
+}
+
+.Contact {
+  margin-top: 7rem;
+}
+
+@media (min-width: 720px) {
+  .Contact {
+    margin-top: 0;
+  }
 }
 
 .Contact span {

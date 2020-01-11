@@ -47,6 +47,10 @@ select option {
 }
 
 .Choose {
+    margin-top: 7rem;
+    @include respond-to(medium){
+        margin-top: 0;
+    }
     &-figure {
         background: white;
         border-radius: 0.6rem;
@@ -100,6 +104,10 @@ select option {
 }
 
 .Contact {
+    margin-top: 7rem;
+    @include respond-to(medium){
+        margin-top: 0;
+    }
     span {
         background: #691218;
         display: block;
