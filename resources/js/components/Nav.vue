@@ -6,10 +6,10 @@
                     <a href="/"><img :src="logo" alt=""></a>
                 </figure>
                 <ul class="is-list-less  justify-center">
-                    <li><a class="Nav-link" href="">INICIO</a></li>
-                    <li><a class="Nav-link" href="">¿QUIÉNES SOMOS?</a></li>
-                    <li><a class="Nav-link" href="">REGLAS DE JUEGO</a></li>
-                    <li><a class="Nav-link" href="">CONTACTO</a></li>
+                    <li><a class="Nav-link" href="/escoge-tu-noche">INICIO</a></li>
+                    <li><a class="Nav-link" href="/nosotros">¿QUIÉNES SOMOS?</a></li>
+                    <li><a class="Nav-link" href="/reglas-del-juego">REGLAS DE JUEGO</a></li>
+                    <li><a class="Nav-link" href="/contacto">CONTACTO</a></li>
                 </ul>
            </div>
         </div>

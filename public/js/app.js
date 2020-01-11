@@ -1745,25 +1745,29 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("ul", { staticClass: "is-list-less  justify-center" }, [
       _c("li", [
-        _c("a", { staticClass: "Nav-link", attrs: { href: "" } }, [
-          _vm._v("INICIO")
-        ])
+        _c(
+          "a",
+          { staticClass: "Nav-link", attrs: { href: "/escoge-tu-noche" } },
+          [_vm._v("INICIO")]
+        )
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { staticClass: "Nav-link", attrs: { href: "" } }, [
+        _c("a", { staticClass: "Nav-link", attrs: { href: "/nosotros" } }, [
           _vm._v("¿QUIÉNES SOMOS?")
         ])
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { staticClass: "Nav-link", attrs: { href: "" } }, [
-          _vm._v("REGLAS DE JUEGO")
-        ])
+        _c(
+          "a",
+          { staticClass: "Nav-link", attrs: { href: "/reglas-del-juego" } },
+          [_vm._v("REGLAS DE JUEGO")]
+        )
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { staticClass: "Nav-link", attrs: { href: "" } }, [
+        _c("a", { staticClass: "Nav-link", attrs: { href: "/contacto" } }, [
           _vm._v("CONTACTO")
         ])
       ])

@@ -3146,6 +3146,7 @@ select option {
   height: 100vh;
   background: white;
   transition: all 0.4s ease-out;
+  z-index: 10;
 }
 
 .Nav-mobile.open {
@@ -3327,6 +3328,7 @@ select option {
   margin: 2rem;
   border-radius: 0.6rem;
   padding: 4px 2px;
+  z-index: 100;
 }
 
 .Menu-mobile span {

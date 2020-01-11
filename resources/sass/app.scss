@@ -38,6 +38,7 @@ select option {
         height: 100vh;
         background: white;
         transition: all .4s ease-out;
+        z-index: 10;
         &.open{
             transform: translateY(100vh);
         }
@@ -214,6 +215,7 @@ select option {
     margin: 2rem;
     border-radius: 0.6rem;
     padding: 4px 2px;
+    z-index: 100;
     span{
         display: block;
         width: 36px;
