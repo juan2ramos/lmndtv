@@ -14,7 +14,7 @@
 <body data-site="{{env('APP_URL')}}" id="body">
 <main class="Main" id="app">
     @if (session()->has('adult'))
-        <div class="Nav  " id="Nav">
+        <div class="Nav hide-phone" id="Nav">
             <ul class="is-list-less row justify-center">
                 <li><a class="Nav-link" href="{{route('choose.night')}}">INICIO</a></li>
                 <li><a class="Nav-link" href="{{route('about')}}">¿QUIÉNES SOMOS?</a></li>
@@ -22,6 +22,10 @@
                 <li><a class="Nav-link" href="{{route('contact')}}">CONTACTO</a></li>
             </ul>
         </div>
+        <figure class="logo hide-phone">
+            <a href="/"><img src="{{url('images/logo-la-mejor-noche-de-tu-vida.svg')}}" alt=""></a>
+        </figure>
+        <nav-vue logo={{url('images/logo-la-mejor-noche-de-tu-vida.svg')}}></nav-vue>
     @endif
 
     @yield('content')

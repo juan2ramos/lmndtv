@@ -3,7 +3,6 @@
     <div class=" container row justify-center middle-items is-full-screen Lottery">
         <div class="is-full-width">
             <h1 class="is-text-center m-t-60 m-b-20">{{$categoryFields['Nombre']}}</h1>
-            <>
                 {{$categoryFields['Descripción']}}
             </p>
             <div class="is-text-center m-40">
@@ -26,7 +25,6 @@
                 @endforeach
             </div>
             <numbers :numbers="{{$numbers}}" :lotteries="{{$lotteries}}"></numbers>
-
         </div>
 
     </div>

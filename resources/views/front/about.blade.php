@@ -10,17 +10,19 @@
                     </figure>
                     <div class="col-16 col-m-13">
                         <h4>¡BIENVENIDO A LA MEJOR NOCHE DE TU VIDA!</h4>
-                        <p class="m-b-20">Somos una empresa dedicada a ofrecer servicios de entrenimiento exclusivos para mayores de
-                            edad con responsabilidad, seguridad y seriedad</p>
+                        <p class="m-b-20">Somos una empresa colombiana dedicada a ofrecer servicios de entretenimiento exclusivo para mayores de edad con responsabilidad, seguridad y seriedad.
+
+                        </p>
                         <h4 >NUESTRO OBJETIVO ES:</h4>
-                        <p class="m-b-20">Ofrecer una innolvidable, experiencia íntima, romántica o divertida para nuestros clientes.</p>
-                        <p  class="m-b-20"><b>LA MEJOR NOCHE DE TU VIDA </b>Es un sorteo donde el ganador o ganadores disfrutarán de un premio nunca antes visto, según
-                            tipo de sorteo al que el usuario ha deseado participar. Es hora de entrar en el mundo de entretenimiento, diversión y sano esparcimiento</p>
+                        <p class="m-b-20">Ofrecer una inolvidable experiencia íntima, romántica y divertida para nuestros clientes.
+                        </p>
+                        <p  class="m-b-20"><b>LA MEJOR NOCHE DE TU VIDA </b> es un sorteo relacionado al entretenimiento para adultos organizado en tres categorías: Noche romántica, Noche de amigos y Noche en limosina, donde los ganadores disfrutarán de un premio exclusivo, según el tipo de sorteo al que el usuario participa. Es hora de entrar en el mundo de entretenimiento, diversión y sano esparcimiento.
+                        </p>
                         <h4>¿ESTÁS LISTO PARA VIVIR UNA EXPERIENCIA INOLVIDABLE?</h4>
                     </div>
                 </div>
             </div>
-            <div class="is-text-center m-t-20">
+            <div class="is-text-center m-t-20  m-b-20">
                 <a href="{{route('choose.night')}}" class="button button-page">¡SI, ESTOY LISTO!</a>
             </div>
         </div>

@@ -13,14 +13,3 @@ Route::group(['middleware' => ['adult']], function () {
     Route::view('/contacto', 'front.contact')->name('contact');
 });
 
-Route::get('air', function () {
-
-    $key = env('AIRTABLE_KEY');
-    $base = env('AIRTABLE_BASE');
-
-    $airtable = new \Armetiz\AirtableSDK\Airtable($key, $base);
-    $records = $airtable->findRecords('Sorteos');
-    dd($records);
-
-
-});

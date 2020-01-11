@@ -3120,6 +3120,7 @@ select option {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
   background: linear-gradient(to bottom, #eaeaea 0%, #ebebeb 47%, #adadad 100%);
 }
 
@@ -3127,7 +3128,28 @@ select option {
   display: block;
   padding: 0.8rem 2rem;
   color: #636363;
-  border-left: 1px solid;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .Nav-link {
+    text-align: left;
+    border-left: 1px solid;
+  }
+}
+
+.Nav-mobile {
+  position: fixed;
+  bottom: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  transition: all 0.4s ease-out;
+}
+
+.Nav-mobile.open {
+  transform: translateY(100vh);
 }
 
 .Choose-figure {
@@ -3137,6 +3159,14 @@ select option {
   width: 20rem;
   height: 20rem;
   margin: auto;
+}
+
+.Choose-figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .Choose-p {
@@ -3254,5 +3284,71 @@ select option {
 .Lottery-form-p {
   text-align: justify;
   font-size: 1.4rem;
+}
+
+.logo {
+  max-width: 100px;
+  position: relative;
+  left: 30px;
+  top: 60px;
+  width: 100%;
+}
+
+.logo-mobile {
+  max-width: 30rem;
+  margin: auto;
+}
+
+.is-full-screen {
+  min-height: calc(100vh - 56px);
+}
+
+.content-page .list-rules {
+  color: black;
+  text-align: left;
+  list-style: -webkit-cross-fade(, 0.5);
+  list-style: cross-fade();
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.Menu-mobile {
+  background: white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 2rem;
+  border-radius: 0.6rem;
+  padding: 4px 2px;
+}
+
+.Menu-mobile span {
+  display: block;
+  width: 36px;
+  background: #c95aab;
+  border-radius: 0;
+  margin: 6px 8px;
+  height: 0.4rem;
+  transition: all 0.2s ease-out;
+}
+
+.Menu-mobile.open span:first-child {
+  transform: translateY(10px) rotate(-45deg);
+  rotate: 45deg;
+}
+
+.Menu-mobile.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.Menu-mobile.open span:last-child {
+  transform: translateY(-10px) rotate(45deg);
 }
 

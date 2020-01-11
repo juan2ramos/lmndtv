@@ -13,7 +13,6 @@ class LotteryController extends Controller
         $airTable = new Airtable($this->key, $this->base);
         $category = $airTable->findRecord('Categorias', ['slug' => $categorySlug]);
         $categoryFields = $category->getFields();
-
         $lotteriesIds = $categoryFields['Sorteos'];
         $lotteries = [];
         $lotteriesFields = [];

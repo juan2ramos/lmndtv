@@ -10,8 +10,8 @@
                 <i>DISPONIBLE</i>
             </div>
             <div class="row middle-items m-b-28 ">
-                <span class="reserve16 m-r-16"></span>
-                <i>RESERVADO</i>
+                <span class="reserved m-r-16"></span>
+                <i>RESERVADO*</i>
             </div>
             <div class="row middle-items m-b-28 ">
                 <span class="not-available m-r-16"></span>
