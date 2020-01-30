@@ -37,15 +37,15 @@ class LotteryController extends Controller
 
         $participants = [];
         $selected = [];
-        $participantsIds = $lotteryFields['Participantes'];
+        $participantsIds = $lotteryFields['Participantes']??[];
 
         foreach ($participantsIds as $participantsId) {
             $participant = $airTable->getRecord('Participantes', $participantsId);
-            $n = $participant->getFields()['numeros'];
+            $n = (!empty ($participant->getFields()['numeros']))?
+                $participant->getFields()['numeros']:[];
             $selected = array_merge($selected, $n);
             $participants[] = $participant;
         }
-
         $numbers = [];
         for ($i = 0; $i < 100; $i++) {
             $numbers[] = ['n' => $i, 'state' => in_array($i, $selected)];
